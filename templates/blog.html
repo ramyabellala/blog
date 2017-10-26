@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+{% if blogs1|length == 0 %} {%if input_id != "" %}
+{{ input }}
+
+{{entry}}
+
+written by {{user_name}}
+
+{% endif %} {% if blogs1|length == 0 and input_id == "" %}
+No blogs Yet
+
+{% endif %} {% endif %} {% if blogs1|length != 0 %}
+Blogs Posts !
+
+{% for blog in blogs1 %}
+{{ blog.title }}
+
+{{blog.blog}}
+
+written by {{blog.uname}}
+
+{% endfor %} {% endif %} {% endblock %}
