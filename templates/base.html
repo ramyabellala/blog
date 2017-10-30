@@ -1,5 +1,28 @@
-
-
-Home | All posts | New post
-{{session['uname']}} Login | Logout
-{% block content %} {% endblock %}
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body style="background-color:bisque">
+        <table>
+            <tr>
+                <td width=1300px>
+                 <div>   
+                    <a href="/"> Home </a>  |
+                    <a href="/blog"> All posts </a> | 
+                    <a href="/newpost"> New post </a>
+                </div>
+                </td>
+                <td width="220px">
+                <div>
+                    <strong> {{session['uname']}}</strong> 
+                    <a href="/login">Login</a> |
+                    <a href="/logout">Logout</a>
+                </div>
+                </td>
+            </tr>
+        </table>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

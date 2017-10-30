@@ -1,12 +1,37 @@
-{% extends "base.html" %} {% block content %}
-Add a Blog Enter
+{% extends "base.html" %}
 
-Title for your new blog	
+      
+{% block content %}
 
-{{ title }}
-{{title_error}}
-Your new blog
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <h2 align="center"> Add a Blog Enter</h2>
 
-{{blog_error}}
-Add Entry
+<form action = "/newpost"  method = "post" >  
+    <table>
+        <tr>
+            <td><label for="Title for your new blog">Title for your new blog</label><td> 
+        </tr> 
+        <tr> 
+            <td><input name="title" type="text" value="{{ title }}"></td>
+        <tr>
+        <tr>
+            <td><span class="error">{{title_error}}</span></td>
+        </tr>
+        <tr>
+            <td><label for="Your new blog">Your new blog</label></td>
+        </tr>
+        <tr> 
+            <td><textarea type = "text"  name="blog" ></textarea></td>
+        </tr>
+        <tr>
+            <td><span class="error">{{blog_error}}</span></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Add Entry">
+</form>
 {% endblock %}
